@@ -1,0 +1,14 @@
+html, body{
+  height: 100vh;
+  width: 100vw;
+}
+
+.page:hover{
+  background-color: aquamarine;
+}
+
+.sidebar{
+  background-color: aqua;
+  height: 100vh;
+  width: 20%;
+}

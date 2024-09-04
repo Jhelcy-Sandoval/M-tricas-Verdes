@@ -4,11 +4,15 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def home():
-  return render_template('index.html', title='Inicio', header='Bienvenido', content='Esto es Flask.')
+  return render_template('index.html', title='Metricas verdes')
 
-@main.route('/home')
-def home_page():
-    return 'Welcome to the home page!'
+@main.route('/resumen')
+def resumen():
+    return render_template('resumen.html', title='Dashboard')
+
+@main.route('/datos-planta')
+def datos_planta():
+    return render_template('datos-planta.html', title='datos-planta')
 
 def init_app(app):
     app.register_blueprint(main)
