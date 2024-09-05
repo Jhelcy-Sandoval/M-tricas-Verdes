@@ -1,24 +1,25 @@
+import json
 from flask import Blueprint, render_template, request, redirect, url_for
 
 main = Blueprint('main', __name__)
 
 # Simulación de "base de datos" en memoria
-plants = [
-    {
-        'id': 1,
-        'tag': 'PLANT001',
-        'species': 'Aloe Vera',
-        'germination_date': '2023-05-01',
-        'initial_conditions': 'Suelo arenoso, baja humedad'
-    },
-    {
-        'id': 2,
-        'tag': 'PLANT002',
-        'species': 'Cactus',
-        'germination_date': '2023-06-15',
-        'initial_conditions': 'Alta temperatura, baja humedad'
-    },
-]
+DB_PATH = 'data/db.json'
+
+def leer_plantas():
+    try:
+        with open(DB_PATH, 'r') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return []
+
+# Función para escribir los datos en db.json
+def guardar_plantas(plantas):
+    with open(DB_PATH, 'w') as file:
+        json.dump(plantas, file, indent=4)
+
+# Leer las plantas desde el archivo al iniciar la aplicación
+plants = leer_plantas()
 
 @main.route('/')
 def home():
@@ -34,18 +35,25 @@ def datos_planta():
     labels = ['January', 'February', 'March', 'April', 'May', 'June']
     values = [10, 20, 30, 40, 50, 60]
 
+    plantas = leer_plantas()
+
     return render_template('datos-planta.html', title='datos-planta',  labels=labels, values=values, plantas=plants)
 
 @main.route('/agregar-planta', methods=['POST'])
 def agregar_planta():
+    plantas = leer_plantas()
+
     nueva_planta = {
-        'id': len(plants) + 1,
+        'id': len(plantas) + 1,
         'tag': request.form['tag'],
         'species': request.form['species'],
         'germination_date': request.form['germination_date'],
         'initial_conditions': request.form['initial_conditions']
     }
-    plants.append(nueva_planta)
+    plantas.append(nueva_planta)
+
+    guardar_plantas(plantas)
+
     return redirect(url_for('main.datos_planta'))
 
 # Ruta para eliminar una planta

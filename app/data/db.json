@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "tag": "PLANT001",
+        "species": "Aloe Vera",
+        "germination_date": "2023-05-01",
+        "initial_conditions": "Suelo arenoso, baja humedad"
+    },
+    {
+        "id": 2,
+        "tag": "PLANT002",
+        "species": "Cactus",
+        "germination_date": "2023-06-15",
+        "initial_conditions": "Alta temperatura, baja humedad"
+    }
+]
