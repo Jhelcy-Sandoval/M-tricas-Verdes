@@ -1,4 +1,5 @@
 :root {
+  --button-primary: rgb(108, 191, 85);
   --primary-color: rgb(102, 152, 117);
   --secondary-color: rgb(35, 124, 70);
   --accent-color: rgb(182, 211, 191);
@@ -18,6 +19,15 @@ iframe{
 }
 
 .barra{
+  background-color: var(--accent-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.button-primary{
+  background-color: var(--button-primary) !important;
+}
+
+.title-tables{
   background-color: var(--accent-color) !important;
 }
 
