@@ -1,14 +1,48 @@
-html, body{
-  height: 100vh;
-  width: 100vw;
+:root {
+  --primary-color: rgb(102, 152, 117);
+  --secondary-color: rgb(35, 124, 70);
+  --accent-color: rgb(182, 211, 191);
+  --background-color-primary: rgb(141, 179, 148);
+  --background-color: rgb(222, 232, 224);
+  --text-color: rgb(7, 48, 44);
+  --color: rgb(255, 255, 255);
+}
+
+body, content{
+  background-color: var(--background-color-primary) !important;
+}
+
+iframe{
+  height: 100%;
+  width: 100%;
+}
+
+.barra{
+  background-color: var(--accent-color) !important;
+}
+
+.component{
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 .page:hover{
-  background-color: aquamarine;
+  background-color: var(--secondary-color);
+  color: var(--color);
+}
+
+.page{
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--color);
+}
+
+.title-barra{
+  color: var(--text-color);
 }
 
 .sidebar{
-  background-color: aqua;
+  background-color: var(--primary-color);
   height: 100vh;
   width: 20%;
 }
