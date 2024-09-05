@@ -15,8 +15,8 @@
       <table class="table table-hover col m-0 ">
         <thead>
           <tr>
-            <th scope="col" colspan="3">Plantas</th>
-            <th scope="col" colspan="1">
+            <th scope="col" colspan="4">Plantas</th>
+            <th scope="col d-flex text-end" colspan="1">
               <button type="button" class="btn btn-success button-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 nuevo
               </button>
@@ -24,9 +24,10 @@
           </tr>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Etiqueta</th>
+            <th scope="col">Especie</th>
+            <th scope="col">Fecha de germinación</th>
+            <th scope="col">Condiciones iniciales</th>
           </tr>
         </thead>
         <tbody>
@@ -35,16 +36,19 @@
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
+            <td>@twitter</td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>Jacob</td>
             <td>Thornton</td>
             <td>@fat</td>
+            <td>@twitter</td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
             <td>@twitter</td>
           </tr>
         </tbody>
@@ -78,28 +82,31 @@
           <form action="">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">
-                Email address
+                Etiqueta
               </label>
               <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">
-                Email address
+                Especie
               </label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="mortiño">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">
-                Email address
+                Fecha de germinación
               </label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
             </div>
-          
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Condiciones iniciales</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success button-primary">Save changes</button>
+          <button type="button" class="btn btn-success button-primary">Guardar</button>
         </form>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         </div>
       </div>
     </div>
