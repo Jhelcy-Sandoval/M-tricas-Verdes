@@ -16,7 +16,7 @@
       <table class="table table-hover col m-0 ">
         <thead>
           <tr>
-            <th scope="col" colspan="4">Plantas</th>
+            <th scope="col" colspan="5">Plantas</th>
             <th scope="col d-flex text-end" colspan="1">
               <button type="button" class="btn btn-success button-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 nuevo
@@ -29,29 +29,32 @@
             <th scope="col">Especie</th>
             <th scope="col">Fecha de germinación</th>
             <th scope="col">Condiciones iniciales</th>
+            <th scope="col">Opciones</th>
           </tr>
         </thead>
         <tbody>
+          {% for planta in plantas %}
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@twitter</td>
+            <th scope="row">
+              {{planta.id}}
+            </th>
+            <td>
+              {{ planta.tag }}
+            </td>
+            <td>
+              {{ planta.species }}
+            </td>
+            <td>
+              {{planta.germination_date}}
+            </td>
+            <td>
+              {{ planta.initial_conditions }}
+            </td>
+            <td>
+              <a href="{{ url_for('main.eliminar_planta', id=planta.id) }}">Eliminar</a>
+            </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-            <td>@twitter</td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
@@ -84,32 +87,32 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="">
+          <form action="{{ url_for('main.agregar_planta') }}" method="POST">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">
-                Etiqueta
+              <label for="tag" class="form-label">
+                Tag
               </label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <input class="form-control" type="text" id="tag" name="tag" required placeholder="name@example.com">
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">
+              <label for="species" class="form-label">
                 Especie
               </label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="mortiño">
+              <input class="form-control" type="text" id="species" name="species" required placeholder="mortiño">
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">
+              <label for="germination_date" class="form-label">
                 Fecha de germinación
               </label>
-              <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <input class="form-control" type="date" id="germination_date" name="germination_date" required placeholder="00/00/00">
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">Condiciones iniciales</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <label for="initial_conditions" class="form-label">Condiciones iniciales</label>
+              <textarea class="form-control" type="text" id="initial_conditions" name="initial_conditions" rows="3"></textarea>
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-success button-primary">Guardar</button>
+          <button type="submit" class="btn btn-success button-primary">Guardar</button>
         </form>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
         </div>
