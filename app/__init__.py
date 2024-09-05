@@ -7,8 +7,9 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
 
+
     # conexion a la base de datos
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///plants.db'  
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'  
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  
 
     db.init_app(app)
