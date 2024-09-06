@@ -11,24 +11,15 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-  <section class="container content mt-4">
-    <div class="row m-4 gap-4">
-      <div class="col component rounded-4 p-3">
-        <div class="card">
+  <section class="container content mt-4 p-3">
+    <div class="row m-4 component gap-4 rounded-4">
+      <div class="col p-3">
+        <div class="card mb-3">
           <div class="card-body">
-            <h4 class="card-title">Gráfico general</h4>
-            <canvas id="myChartdos" ></canvas>
-            <div id="chart-data-dos" data-labels='["Enero","Febrero","Marzo","Abril","Mayo","Junio"]' data-values='[10,20,30,40,50,60]'></div>
-            <script type="module" src="{{ url_for('static', filename='js/graphics.js') }}"></script>
-          </div>
-        </div>
-      </div>
-      <div class="col component rounded-4 p-3">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Estadística clave</h4>
-            <canvas id="myChartseis" ></canvas>
-            <div id="chart-data-seis" data-labels='["Enero","Febrero","Marzo","Abril","Mayo","Junio"]' data-values='[10,20,30,40,50,60]'></div>
+            <h4 class="card-title">Gráfico de desarrollo</h4>
+            <canvas id="myCharttres" ></canvas>
+            <div id="chart-data-tres" data-labels='{{ labelsd | tojson }}' 
+            data-values='{{ valuesd | tojson }}'></div>
             <script type="module" src="{{ url_for('static', filename='js/graphics.js') }}"></script>
           </div>
         </div>
@@ -40,7 +31,8 @@
           <div class="card-body">
             <h4 class="card-title">Gráfico temperatura</h4>
             <canvas id="myChartCuarto" ></canvas>
-            <div id="chart-data-cuarto" data-labels='["Enero","Febrero","Marzo","Abril","Mayo","Junio"]' data-values='[10,20,30,40,50,60]'></div>
+            <div id="chart-data-cuarto" 
+              data-labels='{{ labelst | tojson }}' data-values='{{ valuest | tojson }}'></div>
             <script type="module" src="{{ url_for('static', filename='js/graphics.js') }}"></script>
           </div>
         </div>
@@ -48,52 +40,33 @@
           <div class="card-body">
             <h4 class="card-title">Gráfico de humedad</h4>
             <canvas id="myChartQuinto" ></canvas>
-            <div id="chart-data-quinto" data-labels='["Enero","Febrero","Marzo","Abril","Mayo","Junio"]' data-values='[10,20,30,40,50,60]'></div>
+            <div id="chart-data-quinto" 
+              data-labels='{{ labelsh | tojson }}'
+              data-values='{{ valuesh | tojson }}'></div>
             <script type="module" src="{{ url_for('static', filename='js/graphics.js') }}"></script>
           </div>
         </div>
       </div>
-      <div class="col component rounded-4 p-3 ">
+      <div class="col component rounded-4 p-4">
         <div class="card mb-3">
           <div class="card-body">
-            <h4 class="card-title">Gráfico de desarrollo</h4>
-            <canvas id="myCharttres" ></canvas>
-            <div id="chart-data-tres" data-labels='["Enero","Febrero","Marzo","Abril","Mayo","Junio"]' data-values='[10,20,30,40,50,60]'></div>
+            <h4 class="card-title">Gráfico general</h4>
+            <canvas id="myChartdos" ></canvas>
+            <div id="chart-data-dos" 
+              data-labels='{{ labelst | tojson }}' data-values='{{ valuest | tojson }}'></div>
             <script type="module" src="{{ url_for('static', filename='js/graphics.js') }}"></script>
           </div>
         </div>
-        <table class="table rounded-4 m-0">
-          <thead>
-            <tr>
-              <th class="title-table" scope="col" colspan="4">Tabla de plantas</th>
-            </tr>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title"> estadistica clave</h4>
+            <canvas id="myChartseis" ></canvas>
+            <div id="chart-data-seis" 
+            data-labels='{{ labels_stat | tojson }}' 
+            data-values='{{ values_stat | tojson }}'></div>
+            <script type="module" src="{{ url_for('static', filename='js/graphics.js') }}"></script>
+          </div>
+        </div>
       </div>
     </div>
   </section>
