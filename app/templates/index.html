@@ -11,13 +11,23 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <header>
       <nav class="barra navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand d-flex gap-2 align-items-center" href="#">
-            <img src="../static/img/logo.svg" alt="Logo" width="50" height="50" class="d-inline-block align-text-top rounded-end-circle">
-            <h3 class="text-center title-barra">
-              Métricas verdes
-            </h3>
-          </a>
+        <div class="container-fluid d-flex ">
+            <a class="navbar-brand d-flex gap-2 align-items-center" href="#">
+              <img src="../static/img/logo.svg" alt="Logo" width="50" height="50" class="d-inline-block align-text-top rounded-end-circle">
+              <h3 class="text-center title-barra">
+                Métricas verdes
+              </h3>
+            </a>
+          <div class="p-2">
+            <button type="button" class="btn btn-light position-relative" id="alertButton">
+              <a target="metricas" href="/alertas" class="link-underline-light">Alertas</a>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">
+                  2
+              <span class="visually-hidden">Alertas no leídas</span>
+              </span>
+            </button>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
@@ -30,8 +40,8 @@
             <a target="metricas" href="/datos-planta"  class="page list-group-item list-group-item-action" aria-current="true">
               Datos por planta
             </a>
-            <a target="metricas" href="/resumen"  class="page list-group-item list-group-item-action" aria-current="true">
-              Alertas
+            <a target="metricas" href="/alertas"  class="page list-group-item list-group-item-action" aria-current="true">
+              Alertas 
             </a>
             <a target="metricas" href="/resumen"  class="page list-group-item list-group-item-action" aria-current="true">
               cofiguración

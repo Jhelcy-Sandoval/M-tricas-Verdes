@@ -53,10 +53,6 @@ iframe{
   color: var(--text-color);
 }
 
-table{
-  background-color:rgba(108, 191, 85) !important ;
-}
-
 .sidebar{
   background-color: var(--primary-color);
   height: 100vh;

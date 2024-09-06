@@ -11,7 +11,8 @@ DB_PATH = 'data/db.json'
 def leer_plantas():
     if not os.path.exists(DB_PATH):
         return []  # Si el archivo no existe, devolver una lista vacía
-    with open(DB_PATH, 'r') as file:
+    # Se especifica la codificación 'utf-8' para leer el archivo
+    with open(DB_PATH, 'r', encoding='utf-8') as file:
         return json.load(file)
 
 # Función para escribir los datos en db.json
@@ -42,6 +43,10 @@ def datos_planta():
     plantas = leer_plantas()
 
     return render_template('datos-planta.html', title='Datos Planta', labels=labels, values=values, plantas=plantas)
+
+@main.route('/alertas')
+def alertas():
+    return render_template('alertas.html', title='alertas')
 
 @main.route('/agregar-planta', methods=['POST'])
 def agregar_planta():
