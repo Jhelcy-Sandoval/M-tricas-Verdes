@@ -19,5 +19,12 @@
         "species": "frailejon",
         "germination_date": "2024-09-14",
         "initial_conditions": "humedad"
+    },
+    {
+        "id": 4,
+        "tag": "PLANT003",
+        "species": "Morti\u00f1o",
+        "germination_date": "2024-09-03",
+        "initial_conditions": "humedad"
     }
 ]

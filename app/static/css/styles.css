@@ -19,6 +19,7 @@ iframe{
   width: 100%;
 }
 
+
 .barra{
   background-color: var(--accent-color) !important;
   border-color: var(--primary-color) !important;
@@ -50,6 +51,10 @@ iframe{
 
 .title-barra{
   color: var(--text-color);
+}
+
+table{
+  background-color:rgba(108, 191, 85) !important ;
 }
 
 .sidebar{

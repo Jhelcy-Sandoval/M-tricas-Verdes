@@ -34,7 +34,7 @@
         </thead>
         <tbody>
           {% for planta in plantas %}
-          <tr>
+          <tr >
             <th scope="row">
               {{planta.id}}
             </th>
@@ -52,6 +52,7 @@
             </td>
             <td>
               <a href="{{ url_for('main.eliminar_planta', id=planta.id) }}">Eliminar</a>
+              <button type="submit" class="btn btn-primary">Select</button>
             </td>
           </tr>
           {% endfor %}
@@ -59,17 +60,18 @@
       </table>
     </div>
     <div class="row component rounded-4 p-4">
-      <div class="col-4">
-        <div class="card" style="width: 18rem;">
+      <div class=" col-sm-12 col-md-4">
+        <div class="card" style="width: 18rem;" id="unaplanta">
           <img src="../static/img/logo.svg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-success button-primary">Go somewhere</a>
+            <h5 class="card-title" id="Tag"></h5>
+            <p class="card-text" id="Condiciones iniciales"></p>
+            <p class="card-text" id="Fecha de germinación"></p>
+            <p class="card-text" id="Especie"></p>
           </div>
         </div>
       </div>
-      <div class="col-8">
+      <div class="col-sm-12 col-md-8">
         <div class="card d-flex">
           <canvas id="myChart" ></canvas>
           <div id="chart-data" data-labels='["Enero","Febrero","Marzo","Abril","Mayo","Junio"]' data-values='[10,20,30,40,50,60]'></div>

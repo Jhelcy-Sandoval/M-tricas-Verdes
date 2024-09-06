@@ -24,7 +24,6 @@ def guardar_plantas(plantas):
     with open(DB_PATH, 'w') as file:
         json.dump(plantas, file, indent=4)
 
-# Leer las plantas desde el archivo al iniciar la aplicación
 plants = leer_plantas()
 
 @main.route('/')
@@ -40,13 +39,13 @@ def datos_planta():
     labels = ['January', 'February', 'March', 'April', 'May', 'June']
     values = [10, 20, 30, 40, 50, 60]
 
-    # Leer las plantas actualizadas desde el archivo
     plantas = leer_plantas()
+
     return render_template('datos-planta.html', title='Datos Planta', labels=labels, values=values, plantas=plantas)
 
 @main.route('/agregar-planta', methods=['POST'])
 def agregar_planta():
-    # Leer las plantas actuales
+
     plantas = leer_plantas()
 
     nueva_planta = {
@@ -63,9 +62,17 @@ def agregar_planta():
 
     return redirect(url_for('main.datos_planta'))
 
+# @main.route('/handle-planta', methods=['GET'])
+# def handle_planta():
+#     planta_data = request.args.to_dict()
+
+#     print('Received plant data:', planta_data)
+
+#     return jsonify({'message': 'Plant data received successfully', 'plant': planta_data})
+
 @main.route('/eliminar-planta/<int:id>')
 def eliminar_planta(id):
-    # Leer las plantas actuales
+
     plantas = leer_plantas()
 
     # Filtrar la planta a eliminar
@@ -75,6 +82,6 @@ def eliminar_planta(id):
     guardar_plantas(plantas)
 
     return redirect(url_for('main.datos_planta'))
-
+    
 def init_app(app):
     app.register_blueprint(main)

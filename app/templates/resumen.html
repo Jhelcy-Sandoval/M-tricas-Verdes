@@ -13,20 +13,55 @@
 
   <section class="container content mt-4">
     <div class="row m-4 gap-4">
-      <div class="col component rounded-4">
-        <h1>Grafico general</h1>
+      <div class="col component rounded-4 p-3">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Gráfico general</h4>
+            <canvas id="myChartdos" ></canvas>
+            <div id="chart-data-dos" data-labels='["Enero","Febrero","Marzo","Abril","Mayo","Junio"]' data-values='[10,20,30,40,50,60]'></div>
+            <script type="module" src="{{ url_for('static', filename='js/graphics.js') }}"></script>
+          </div>
+        </div>
       </div>
-      <div class="col component rounded-4">
-        <h1>Estadistica clave</h1>
+      <div class="col component rounded-4 p-3">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Estadística clave</h4>
+            <canvas id="myChartseis" ></canvas>
+            <div id="chart-data-seis" data-labels='["Enero","Febrero","Marzo","Abril","Mayo","Junio"]' data-values='[10,20,30,40,50,60]'></div>
+            <script type="module" src="{{ url_for('static', filename='js/graphics.js') }}"></script>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row m-4 gap-4">
-      <div class="col component rounded-4">
-        <h1>Grafico temperatura</h1>
-        <h1>Gráfico de humedad</h1>
-        <h1>Gráfico de desarrollo</h1>
+      <div class="col component rounded-4 p-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h4 class="card-title">Gráfico temperatura</h4>
+            <canvas id="myChartCuarto" ></canvas>
+            <div id="chart-data-cuarto" data-labels='["Enero","Febrero","Marzo","Abril","Mayo","Junio"]' data-values='[10,20,30,40,50,60]'></div>
+            <script type="module" src="{{ url_for('static', filename='js/graphics.js') }}"></script>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Gráfico de humedad</h4>
+            <canvas id="myChartQuinto" ></canvas>
+            <div id="chart-data-quinto" data-labels='["Enero","Febrero","Marzo","Abril","Mayo","Junio"]' data-values='[10,20,30,40,50,60]'></div>
+            <script type="module" src="{{ url_for('static', filename='js/graphics.js') }}"></script>
+          </div>
+        </div>
       </div>
-      <div class="col component rounded-4 p-3 d-flex justify-content-center align-items-center">
+      <div class="col component rounded-4 p-3 ">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h4 class="card-title">Gráfico de desarrollo</h4>
+            <canvas id="myCharttres" ></canvas>
+            <div id="chart-data-tres" data-labels='["Enero","Febrero","Marzo","Abril","Mayo","Junio"]' data-values='[10,20,30,40,50,60]'></div>
+            <script type="module" src="{{ url_for('static', filename='js/graphics.js') }}"></script>
+          </div>
+        </div>
         <table class="table rounded-4 m-0">
           <thead>
             <tr>
